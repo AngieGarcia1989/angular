@@ -6,7 +6,9 @@
 </div>
 <button (click)="addItem()">Add Item</button>
 <ul>
+  <li *ngIf="items.length === 0">la lista esta vacia</li>
   <li *ngFor="let name of items;index as i">
 {{name}} {{i}}
+<button (click)="deleteItem(i)">delete</button>
   </li>
 </ul>
