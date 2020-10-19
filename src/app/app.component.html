@@ -1,8 +1,15 @@
 <input type="text" [(ngModel)]="title">
 {{title}}
 
-<div *ngIf="title === 'angie'">
-  es un div
+<!-- <div *ngIf="title === 'angie'">
+  esta es angie
+</div> -->
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'angie'">esta es angie</p>
+  <p *ngSwitchCase="'andres'">este es andres</p>
+  <p *ngSwitchCase="'juan'">este es juan</p>
+  <p *ngSwitchDefault>NO HAY MATCH</p>
 </div>
 <button (click)="addItem()">Add Item</button>
 <ul>
@@ -12,3 +19,8 @@
 <button (click)="deleteItem(i)">delete</button>
   </li>
 </ul>
+<div *ngFor="let product of products">
+{{product.title}}
+<img [src]="product.image" alt="">
+{{product.price}}
+</div>
